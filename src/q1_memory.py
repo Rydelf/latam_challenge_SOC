@@ -1,6 +1,6 @@
 from typing import List, Tuple
 from datetime import datetime
-import gcp
+from gcp import read_json_from_gcp
 
 
 def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
@@ -28,5 +28,6 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
     return date_top_user
 
 # Ejemplo de uso
-result = q1_memory(gcp.read_json_from_gcp("latam-1", "farmers-protest-tweets-2021-2-4.json", "latam-challenge-417813"))
+file_path = read_json_from_gcp("latam-1", "farmers-protest-tweets-2021-2-4.json", "latam-challenge-417813")
+result = q1_memory(file_path)
 print(result)
